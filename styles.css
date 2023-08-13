@@ -7,6 +7,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #f0f0f0;
+  overflow: hidden;
 }
 
 .container {
@@ -14,55 +15,65 @@ body {
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-h2 {
-  margin-top: 0;
+.container > * {
+  margin: 10px 0;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
+.checkboxesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Adjust the margin as needed */
 }
 
 .checkbox-label {
-  display: inline-block;
-  width: 80px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
-.output {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  text-align: left;
+.checkbox-label input[type="checkbox"] {
+  display: none;
 }
 
-#checkboxesContainer {
-  margin-top: 10px;
+.checkbox-slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.checkbox-knob {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-slider {
+  background-color: #44cc66;
+}
+
+.checkbox-label
+  input[type="checkbox"]:checked
+  + .checkbox-slider
+  .checkbox-knob {
+  transform: translateX(20px);
 }
 
 /* Additional styles for responsive design */
@@ -71,4 +82,16 @@ label {
     width: 90%;
     max-width: 400px;
   }
+}
+
+/* Add this at the end of your existing CSS */
+.output.show-result {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.output.show-result.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

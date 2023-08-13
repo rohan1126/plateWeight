@@ -21,6 +21,49 @@
         ><input type="radio" name="calculation" value="totalWeight" />Total
         Weight</label
       >
+      <div id="checkboxesContainer" style="display: none">
+        <h2>Available Plate Weights</h2>
+        <!-- Update your HTML with the new checkbox structure for all options -->
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="45" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+          45 lbs
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="25" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+          25 lbs
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="10" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+          10 lbs
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="5" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+          5 lbs
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="2.5" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+          2.5 lbs
+        </label>
+      </div>
       <h2>Weight Input</h2>
       <input
         type="number"
@@ -28,30 +71,8 @@
         placeholder="Enter weight"
         inputmode="numeric"
       />
+
       <button id="calculateButton">Calculate</button>
-      <div id="checkboxesContainer" style="display: none">
-        <h2>Available Plate Weights</h2>
-        <label class="checkbox-label"
-          ><input type="checkbox" name="plateWeight" value="45" checked />45
-          lbs</label
-        >
-        <label class="checkbox-label"
-          ><input type="checkbox" name="plateWeight" value="25" checked />25
-          lbs</label
-        >
-        <label class="checkbox-label"
-          ><input type="checkbox" name="plateWeight" value="10" checked />10
-          lbs</label
-        >
-        <label class="checkbox-label"
-          ><input type="checkbox" name="plateWeight" value="5" checked />5
-          lbs</label
-        >
-        <label class="checkbox-label"
-          ><input type="checkbox" name="plateWeight" value="2.5" checked />2.5
-          lbs</label
-        >
-      </div>
       <div class="output" id="output"></div>
     </div>
 
