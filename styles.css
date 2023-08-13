@@ -135,3 +135,7 @@ input[type="number"] {
   border-radius: 4px;
   font-size: 18px; /* Increase the font size to make the text larger */
 }
+
+body.calculator-active {
+  overflow: hidden;
+}
