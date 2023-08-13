@@ -3,14 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const weightInput = document.getElementById("weightInput");
   const calculateButton = document.getElementById("calculateButton");
   const output = document.getElementById("output");
-  const checkboxesContainer = document.getElementById("checkboxesContainer"); // New line
+  const checkboxesContainer = document.getElementById("checkboxesContainer");
 
+  // Add event listeners for calculation radio buttons
   calculationRadioButtons.forEach((radio) => {
     radio.addEventListener("change", function () {
       checkboxesContainer.style.display =
-        radio.value === "requiredPlates" ? "block" : "none";
+        radio.value === "requiredPlates" || "totalWeight" ? "block" : "none";
     });
+    1;
   });
+
+  // Trigger the change event on "Required Plates" radio button to show checkboxes on load
+  calculationRadioButtons[0].dispatchEvent(new Event("change"));
 
   calculateButton.addEventListener("click", function () {
     const selectedCalculation = document.querySelector(

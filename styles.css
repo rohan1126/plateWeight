@@ -95,3 +95,34 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.container {
+  border: 1px solid #ccc; /* Add border */
+}
+
+.checkboxesContainer {
+  border: 1px solid #ccc; /* Add border */
+  padding: 10px; /* Add padding */
+  border-radius: 4px; /* Add border radius */
+}
+
+.checkbox-label {
+  border-bottom: 1px solid #ddd; /* Add border bottom */
+  padding: 5px 0; /* Add padding */
+}
+
+.output {
+  border: 1px solid #ccc; /* Add border */
+  padding: 10px; /* Add padding */
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  text-align: left;
+  margin-top: 20px; /* Add margin */
+}
+
+/* Add this style to your existing CSS */
+.toggle-image {
+  width: 20px; /* Set the width of the image */
+  height: 20px; /* Set the height of the image */
+  display: none; /* Hide the image by default */
+}
