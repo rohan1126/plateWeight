@@ -5,13 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const output = document.getElementById("output");
   const checkboxesContainer = document.getElementById("checkboxesContainer");
 
-  // Add event listeners for calculation radio buttons
   calculationRadioButtons.forEach((radio) => {
     radio.addEventListener("change", function () {
       checkboxesContainer.style.display =
         radio.value === "requiredPlates" || "totalWeight" ? "block" : "none";
+      weightInput.value = ""; // Clear the input field when switching options
+      output.innerHTML = ""; // Clear the output
+      document.getElementById("images").innerHTML = ""; // Clear the images
     });
-    1;
   });
 
   // Trigger the change event on "Required Plates" radio button to show checkboxes on load
