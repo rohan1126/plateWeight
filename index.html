@@ -35,6 +35,14 @@
           </div>
           45 lbs
         </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="35" checked />
+          <div class="checkbox-slider">
+            <!-- <img src="plate_45.png" alt="Toggle Image" class="toggle-image" /> -->
+            <div class="checkbox-knob"></div>
+          </div>
+          35 lbs
+        </label>
 
         <label class="checkbox-label">
           <input type="checkbox" name="plateWeight" value="25" checked />
@@ -75,10 +83,12 @@
         id="weightInput"
         placeholder="Enter weight"
         inputmode="numeric"
+        autofocus
       />
 
       <button id="calculateButton">Calculate</button>
       <div class="output" id="output"></div>
+      <div class="images" id="images"></div>
     </div>
 
     <script src="main.js"></script>

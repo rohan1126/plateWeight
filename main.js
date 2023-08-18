@@ -75,13 +75,13 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
     for (const plate in plateCounts) {
       outputText += `${plateCounts[plate]} x ${plate} lb plates<br>`;
       imageHtml +=
-        `<img src="plate_${plate}.jpg" alt="${plate} lb Plate">`.repeat(
+        `<img src="images/plate_${plate}.jpg" alt="${plate} lb Plate">`.repeat(
           plateCounts[plate]
         );
     }
 
     document.getElementById("output").innerHTML = outputText;
-    document.getElementById("images").innerHTML = imageHtml;
+    document.getElementById("images").innerHTML = imageHtml; // Add images
   } else {
     document.getElementById("output").innerHTML =
       "It's not possible to achieve the desired weight with the given plates.";
