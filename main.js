@@ -72,10 +72,26 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
     let outputText = "Plate breakdown:<br>";
     let imageHtml = "";
 
-    for (const plate in plateCounts) {
+    const plateWeights = Object.keys(plateCounts)
+      .map((plate) => parseFloat(plate))
+      .sort((a, b) => b - a); // Sort plate weights in reverse order
+
+    const largestPlateWeight = plateWeights[0]; // Get the weight of the largest plate
+
+    for (const plate of plateWeights) {
+      const scale = plate / largestPlateWeight; // Calculate the scaling factor
+      let scaledHeight = Math.round(100 * scale);
+
+      // Set a minimum
+      if (plate === 10 && scaledHeight < 40) {
+        scaledHeight = 60;
+      } else if (plate === 5 && scaledHeight < 30) {
+        scaledHeight = 50;
+      }
+
       outputText += `${plateCounts[plate]} x ${plate} lb plates<br>`;
       imageHtml +=
-        `<img src="images/plate_${plate}.jpg" alt="${plate} lb Plate">`.repeat(
+        `<img src="images/plate_${plate}.jpg" alt="${plate} lb Plate" style="height: ${scaledHeight}px;">`.repeat(
           plateCounts[plate]
         );
     }
