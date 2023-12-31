@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ).value;
     const enteredWeight = parseFloat(weightInput.value);
 
-    if (isNaN(enteredWeight)) {
+    if (isNaN(enteredWeight) || enteredWeight > 499) {
       output.innerHTML = "Please enter a valid weight.";
       return;
     }
@@ -87,6 +87,8 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
         scaledHeight = 60;
       } else if (plate === 5 && scaledHeight < 30) {
         scaledHeight = 50;
+      } else if (plate === 2.5 && scaledHeight < 20) {
+        scaledHeight = 40;
       }
 
       outputText += `${plateCounts[plate]} x ${plate} lb plates<br>`;
@@ -111,4 +113,8 @@ function calculateTotalWeight(oneSideWeight) {
   document.getElementById(
     "output"
   ).innerHTML = `Total weight: ${totalWeight} lbs`;
+}
+function darkModeToggle() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
 }

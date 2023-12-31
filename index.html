@@ -11,6 +11,14 @@
   </head>
   <body>
     <div class="container">
+      <!-- <button onclick="darkMode()">Toggle dark mode</button> -->
+      <div class="toggle-container">
+        <span class="toggle-label">Toggle Dark Mode:</span>
+        <label class="toggle-switch">
+          <input type="checkbox" onchange="darkModeToggle()" />
+          <span class="slider"></span>
+        </label>
+      </div>
       <h2>Calculation Method</h2>
       <label
         ><input
