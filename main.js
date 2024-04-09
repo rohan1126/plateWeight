@@ -91,7 +91,7 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
         scaledHeight = 40;
       }
 
-      outputText += `${plateCounts[plate]} x ${plate} lb plates<br>`;
+      outputText += `${plateCounts[plate]} x ${plate} kg plates<br>`;
       imageHtml +=
         `<img src="images/plate_${plate}.jpg" alt="${plate} lb Plate" style="height: ${scaledHeight}px;">`.repeat(
           plateCounts[plate]
