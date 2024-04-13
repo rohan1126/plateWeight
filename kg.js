@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ).value;
         const enteredWeight = parseFloat(weightInput.value);
 
-        if (isNaN(enteredWeight) || enteredWeight > 499) {
+        if (isNaN(enteredWeight) || enteredWeight > 300) {
             output.innerHTML = "Please enter a valid weight.";
             return;
         }
@@ -75,10 +75,13 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
     if (remainingWeight === 0) {
         let outputText = "Plate breakdown:<br>";
         let imageHtml = "";
+        let weightlbs = (Math.floor(desiredWeight * 2.2)) + "lbs";
 
         for (const plate of selectedPlateWeights) { // Iterate over sorted plate weights
             if (platesNeeded[plate] !== undefined) { // Check if plate is needed
+                
                 outputText += `${platesNeeded[plate]} x ${plate} kg plates<br>`;
+                
                 const scaledHeight = Math.round(100 * (plate / 20)); // Assuming the barbell's weight is 20 kg
                 imageHtml +=
                     `<img src="imageskg/plate_${plate}.jpg" alt="${plate} kg Plate" ">`
@@ -87,6 +90,7 @@ function calculateRequiredPlates(desiredWeight, selectedPlateWeights) {
         }
 
         document.getElementById("output").innerHTML = outputText;
+        document.getElementById("lbsout").innerHTML = weightlbs
         document.getElementById("images").innerHTML = imageHtml; // Add images
     } else {
         document.getElementById("output").innerHTML =

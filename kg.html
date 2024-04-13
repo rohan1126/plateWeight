@@ -13,13 +13,13 @@
     <div class="container">
 
       <!-- <button onclick="darkMode()">Toggle dark mode</button> -->
-      <div class="toggle-container">
+      <!-- <div class="toggle-container">
         <span class="toggle-label">Toggle Dark Mode:</span>
         <label class="toggle-switch">
           <input type="checkbox" onchange="darkModeToggle()" />
           <span class="slider"></span>
         </label>
-      </div>
+      </div> -->
       <h2>Calculation Method</h2>
       <label
         ><input
@@ -29,10 +29,10 @@
           checked
         />Required Plates</label
       >
-      <label
+      <!-- <label
         ><input type="radio" name="calculation" value="totalWeight" />Total
         Weight</label
-      >
+      > -->
       <div id="checkboxesContainer" style="display: none">
         <h2>Available Plate Weights</h2>
         <!-- Update your HTML with the new checkbox structure for all options -->
@@ -84,6 +84,14 @@
           </div>
           2.5 kg
         </label>
+        
+        <label class="checkbox-label">
+          <input type="checkbox" name="plateWeight" value="1.25" checked />
+          <div class="checkbox-slider">
+            <div class="checkbox-knob"></div>
+          </div>
+         1.25 kg
+        </label>
       </div>
 
       <h2>Weight Input</h2>
@@ -96,17 +104,24 @@
       />
 
       <button id="calculateButton">Calculate</button>
-      <div class="output" id="output"></div>
-
+      <div class="output">
+      <div id="output"></div>
+      <div id ="lbsout"></div>
+      </div>
       <div class="plates-container">
         <div class="barbell"><img src="images/barbelly.jpg" /></div>
         <div class="images" id="images"></div>
       </div>
       <br />
-      
+      <br>
       <h1>Pounds to Kilograms Converter</h1>
       <label for="lbsnum">Enter weight in pounds:</label>
-      <input type="number" id="lbsnum">
+      <input         
+      type="number"
+      id="lbsnum"
+      placeholder="Enter weight"
+      inputmode="numeric"
+      autofocus>
       <button onclick="convert()">Convert</button>
       <p id="converted"></p>
 
